@@ -1,7 +1,7 @@
 # Interface_USPEX9.4.4_CRYSTAL
 USPEX 9.4.4/CRYSTAL interface
 
-Interface is written for CRYSTAL17, but should be suitable at least for CRYSTAL14 and CRYSTAL09
+Interface is written for CRYSTAL17, but should be suitable at least for CRYSTAL14 and CRYSTAL09. To use CRYSTAL, specify "20" as the code number in the USPEX input file.
 
 To use the interface:
 
