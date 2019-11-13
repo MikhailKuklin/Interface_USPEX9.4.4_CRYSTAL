@@ -12,6 +12,8 @@ if flag == 0
 elseif flag == 1
 %finds energy of the optimized structure and transforms from  hartree to eV
   [nothing, results] = unix('cat CRYSTAL.o | grep -E "* OPT END" | tail -n 1 | awk ''{print $8}''');
+  %rename outputs files
+  [nothing, nothing] = unix(['cp CRYSTAL.o CRYSTAL-`date +"%b%d-%T"`-' ID '.o']);
   energy = str2num(results);
   target = energy * Ha;
   disp('CRYSTAL optimization is finished');
