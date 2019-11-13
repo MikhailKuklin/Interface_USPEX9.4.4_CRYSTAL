@@ -51,6 +51,7 @@ fprintf(fp, '0 %1d\n', Kpoints(1, 1));
 fprintf(fp, '%1d %1d %1d\n', Kpoints(1,:));
 fprintf(fp, 'END\n');
 fclose(fp);
+%checks if structure is magnetic
 [nothing, HAVESPIN] =unix('head -n 1 CRYSTAL.d12 | grep SPIN');
 if isempty(HAVESPIN);
 [nothing, nothing] = unix(['mv CRYSTAL2.ext CRYSTAL.ext']);
