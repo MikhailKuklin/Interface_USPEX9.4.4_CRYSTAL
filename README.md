@@ -17,7 +17,9 @@ Write_CRYSTAL.m
 
 2) Copy Create_CalcFolder.m file to directory src/FunctionFolder/sys 
 
-3) Copy change_atoms files to src/FunctionFolder/Tool
+3) Copy change_atoms file to src/FunctionFolder/Tool
+
+4) Copy Initialize.m file to src/FunctionFolder/USPEX/src (it will create CRYSTAL_OUTPUTS folder where outputs files will be saved)
 
 Don't forget to make all of the script executable (chmod+x).
 
