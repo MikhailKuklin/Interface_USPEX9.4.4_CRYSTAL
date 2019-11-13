@@ -22,6 +22,7 @@ elseif code ==9
 [a,b]=unix('rm relaxation_restart_file.FHIaims');
 elseif code == 12
 [a,b]=unix('rm -f output *.current_stage *.int* *.key *.make0 *.make *.seq *.tmp *.xyz* *.angles* *.pdb* POSCAR*');
+% Part below was added. "20" is a code for CRYSTAL
 elseif code == 20
 [a,b]=unix('mv CRYSTAL.o CRYSTAL_old.o');
 [a,b]=unix('rm CRYSTAL.w CRYSTAL.ext CRYSTAL.batch-log CRYSTAL.log');
