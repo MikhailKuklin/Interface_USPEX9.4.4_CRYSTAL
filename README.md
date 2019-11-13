@@ -24,3 +24,5 @@ Don't forget to make all of the script executable (chmod+x).
 USPEX will automatically create folder "CRYSTAL_OUTPUTS" with all output files from CRYSTAL.
 
 In order to get correct space group of the magnetic systems (keyword SPIN is used in the CRYSTAL input file), you have to have the word "SPIN" in the first line of the CRYSTAL input file followed by the atomic number of the element (see example folder). In the USPEX input file you have to specify "He" for atoms with opposite spins (-1). If you do not want to use such option for magnetic systems with specified spins, do not forget to turn off symmetry in USPEX input file (0  : doSpaceGroup). 
+
+More information with examples can be found from https://wiki.aalto.fi/display/IMM/USPEX+guide
