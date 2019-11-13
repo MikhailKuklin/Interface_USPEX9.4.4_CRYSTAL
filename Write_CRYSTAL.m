@@ -12,10 +12,12 @@ catch
   error = ['CRYSTAL_options is not present for step ' num2str(Step)];
   quit
 end
-fp=fopen('CRYSTAL.ext', 'w');
+%disp(LATTICE)
+%write ext file
+fp=fopen('CRYSTAL2.ext', 'w');
 fprintf(fp, '3 1 1\n');
 LATTICE = LATTICE;
-%manipulation with lattice for fractional-cartesian transformation
+%manipulation with lattice for fract-cart transformation
 fprintf(fp, '%8.4f %8.4f %8.4f\n', LATTICE(1,:));
 fprintf(fp, '%8.4f %8.4f %8.4f\n', LATTICE(2,:));
 fprintf(fp, '%8.4f %8.4f %8.4f\n', LATTICE(3,:));
@@ -30,10 +32,12 @@ coordLoop = 1;
 for i = 1 : length(numIons)
   for j = 1 : numIons(i);
     cartcoord = COORDINATES(coordLoop, :) * LATTICE;
+    %disp(COORDINATES(coordLoop, :));
     fprintf(fp, '%4d  %12.6f %12.6f %12.6f\n', ORG_STRUC.atomType(i), cartcoord);
     coordLoop = coordLoop + 1;
   end
 end
+%disp(cartcoord);
 fclose(fp);
 fp = fopen('CRYSTAL.d12','a+');
 fprintf(fp, 'SHRINK\n');
@@ -47,3 +51,9 @@ fprintf(fp, '0 %1d\n', Kpoints(1, 1));
 fprintf(fp, '%1d %1d %1d\n', Kpoints(1,:));
 fprintf(fp, 'END\n');
 fclose(fp);
+[nothing, HAVESPIN] =unix('head -n 1 CRYSTAL.d12 | grep SPIN');
+if isempty(HAVESPIN);
+[nothing, nothing] = unix(['mv CRYSTAL2.ext CRYSTAL.ext']);
+else
+[nothing, nothing] = unix('./change_atoms > CRYSTAL.ext');
+end
