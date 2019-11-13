@@ -12,6 +12,7 @@ mkdir(['CalcFold' num2str(folds)]);
 [nothing, nothing] = unix(['cp  ', ORG_STRUC.USPEXPath, '/FunctionFolder/Tool/getStuff CalcFold' num2str(folds)]);
 [nothing, nothing] = unix(['cp  ', ORG_STRUC.USPEXPath, '/FunctionFolder/Tool/change_atoms CalcFold' num2str(folds)]);
 [nothing, nothing] = unix(['chmod +x CalcFold' num2str(folds) '/getStuff ']);
+%takes change_atoms script in use
 [nothing, nothing] = unix(['chmod +x CalcFold' num2str(folds) '/change_atoms ']);
 if sum(ORG_STRUC.abinitioCode==1) == 0 || size(ORG_STRUC.abinitioCode,2) ~= sum(ORG_STRUC.abinitioCode==1)  
 [nothing, nothing] = unix(['cp ./'  ORG_STRUC.specificFolder '/* CalcFold' num2str(folds)]);
