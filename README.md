@@ -1,6 +1,8 @@
 # Interface_USPEX9.4.4_CRYSTAL
 USPEX 9.4.4/CRYSTAL interface
 
+Please, note that you can also cite this interface. DOI number created by Zenodo repository can be found here: 10.5281/zenodo.3559474. DOI number of original publications can be found here: 10.1021/acs.jpcc.8b08238.
+
 Interface is written for CRYSTAL17, but should be suitable at least for CRYSTAL14. To use CRYSTAL, specify "20" as the code number in the USPEX input file.
 
 To use the interface:
