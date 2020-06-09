@@ -7,14 +7,14 @@ COORDINATES = POP_STRUC.POPULATION(Ind_No).COORDINATES;
 LATTICE     = POP_STRUC.POPULATION(Ind_No).LATTICE;
 atomType    = ORG_STRUC.atomType;
 try
-  [nothing, nothing] = unix(['cat CRYSTAL_options_' num2str(Step) ' > CRYSTAL.d12']);
+  [nothing, nothing] = unix(['cat ../CRYSTAL_options_' num2str(Step) ' > CRYSTAL.d12']);
 catch
   error = ['CRYSTAL_options is not present for step ' num2str(Step)];
   quit
 end
 %disp(LATTICE)
 %write ext file
-fp=fopen('CRYSTAL2.ext', 'w');
+fp=fopen('fort2.34', 'w');
 fprintf(fp, '3 1 1\n');
 LATTICE = LATTICE;
 %manipulation with lattice for fract-cart transformation
@@ -54,7 +54,7 @@ fclose(fp);
 %checks if structure is magnetic
 [nothing, HAVESPIN] =unix('head -n 1 CRYSTAL.d12 | grep SPIN');
 if isempty(HAVESPIN);
-[nothing, nothing] = unix(['mv CRYSTAL2.ext CRYSTAL.ext']);
+[nothing, nothing] = unix(['mv fort2.34 fort.34']);
 else
-[nothing, nothing] = unix('./change_atoms > CRYSTAL.ext');
+[nothing, nothing] = unix('./change_atoms > fort.34');
 end
