@@ -7,7 +7,7 @@ COORDINATES = POP_STRUC.POPULATION(Ind_No).COORDINATES;
 LATTICE     = POP_STRUC.POPULATION(Ind_No).LATTICE;
 atomType    = ORG_STRUC.atomType;
 try
-  [nothing, nothing] = unix(['cat ../CRYSTAL_options_' num2str(Step) ' > CRYSTAL.d12']);
+  [nothing, nothing] = unix(['cat CRYSTAL_options_' num2str(Step) ' > CRYSTAL.d12']);
 catch
   error = ['CRYSTAL_options is not present for step ' num2str(Step)];
   quit
