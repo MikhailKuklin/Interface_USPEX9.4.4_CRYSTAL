@@ -25,5 +25,6 @@ elseif code == 12
 %"20" is a code for CRYSTAL. Outputs files will be copied to CRYSTAL_OUTPUTS folder
 elseif code == 20
 [a,b]=unix('mv CRYSTAL-*Step* ../CRYSTAL_OUTPUTS');
-[a,b]=unix('rm CRYSTAL.w CRYSTAL.ext CRYSTAL.batch-log CRYSTAL.log');
+% Personalize the list of files to be removed. It depends on the setups of CRYSTAL on your cluster
+[a,b]=unix('rm fort.34 fort.9');
 end
