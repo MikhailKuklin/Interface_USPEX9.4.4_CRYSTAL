@@ -4,4 +4,4 @@
 
 change_atoms="$(head -n 1 CRYSTAL.d12 | awk '{print $2}')"
 
-cat CRYSTAL2.ext | awk -v change_atoms=$change_atoms '{ if ($1 == "2") {$1 = change_atoms}; print }'
+cat fort2.34 | awk -v change_atoms=$change_atoms '{ if ($1 == "2") {$1 = change_atoms}; print }'
