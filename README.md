@@ -1,6 +1,6 @@
 # Interface_USPEX9.4.4_CRYSTAL
 
-##USPEX 9.4.4/CRYSTAL interface
+## USPEX 9.4.4/CRYSTAL interface
 
 Please, note that you can also cite this interface. DOI number created by Zenodo repository can be found here: 10.5281/zenodo.3559474. 
 
